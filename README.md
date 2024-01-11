@@ -1,4 +1,3 @@
-
 # Snake Game
 
 ## Description
@@ -18,9 +17,10 @@ This is a classic Snake arcade game implemented in Python using the Turtle graph
     - The snake will continuously move in the current direction.
     - The objective is to eat the green food to increase your score.
 
-3. **Game Over:**
+3. **Game Over and Restart:**
     - The game ends if the snake collides with the screen boundaries or itself.
     - The final score will be displayed on the screen.
+    - To restart the game after a Game Over, press the 'r' key.
 
 4. **Documentation:**
     - The code is documented using comments for better understanding.
