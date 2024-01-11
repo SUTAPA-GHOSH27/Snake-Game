@@ -30,7 +30,7 @@ This is a classic Snake arcade game implemented in Python using the Turtle graph
     - ...
 
 6. **Demo:**
-    - [Demo Video](link_to_demo_video): Check out a short demo video showcasing the Snake game in action.
+    - [demo.gif](link_to_demo_video): Check out a short demo video showcasing the Snake game in action.
     - (Optional) Attach a GIF or provide instructions on creating a demo GIF.
 
 ## Enjoy the Game!
