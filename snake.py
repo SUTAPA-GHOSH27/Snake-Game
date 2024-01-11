@@ -16,34 +16,38 @@ from freegames import square, vector
 food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
-score = 0  # Initialize the score
+score = 0
+
+def restart_game():
+    global food, snake, aim, score
+    food = vector(0, 0)
+    snake = [vector(10, 0)]
+    aim = vector(0, -10)
+    score = 0
+    move()
 
 def change(x, y):
-    """Change snake direction."""
     aim.x = x
     aim.y = y
 
 def inside(head):
-    """Return True if head inside boundaries."""
     return -200 < head.x < 190 and -200 < head.y < 190
 
 def move():
-    """Move snake forward one segment."""
-    global score  # Use the global keyword to modify the score variable
+    global score
     head = snake[-1].copy()
     head.move(aim)
 
     if not inside(head) or head in snake:
         square(head.x, head.y, 9, 'red')
         update()
-        write("Game Over. Score: {}".format(score), align="center", font=("Courier", 24, "normal"))
+        write("Game Over. Score: {}. Press 'r' to restart.".format(score), align="center", font=("Courier", 20, "normal"))
         return
 
     snake.append(head)
 
     if head == food:
-        score += 1  # Increase the score when the snake eats the food
-        #print('Snake:', len(snake))
+        score += 1
         food.x = randrange(-15, 15) * 10
         food.y = randrange(-15, 15) * 10
     else:
@@ -59,14 +63,23 @@ def move():
     update()
     ontimer(move, 100)
 
+# Set up the turtle screen
 setup(420, 420, 370, 0)
 hideturtle()
 tracer(False)
 listen()
+
+# Set up key bindings
 onkey(lambda: change(10, 0), 'Right')
 onkey(lambda: change(-10, 0), 'Left')
 onkey(lambda: change(0, 10), 'Up')
 onkey(lambda: change(0, -10), 'Down')
+
+# Bind the 'r' key to restart the game
+onkey(restart_game, 'r')
+
+# Start the game
 move()
 done()
+
 
