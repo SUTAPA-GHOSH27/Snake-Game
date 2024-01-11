@@ -26,12 +26,9 @@ This is a classic Snake arcade game implemented in Python using the Turtle graph
     - The code is documented using comments for better understanding.
     - Further details about the `freegames` module can be found [here](https://pypi.org/project/freegames/).
 
-5. **Exercise Suggestions:**
-    - ...
-
-6. **Demo:**
+5. **Demo:**
     - [demo.gif](link_to_demo_video): Check out a short demo video showcasing the Snake game in action.
-    - (Optional) Attach a GIF or provide instructions on creating a demo GIF.
+    - check demo.gif and image file.
 
 ## Enjoy the Game!
 
